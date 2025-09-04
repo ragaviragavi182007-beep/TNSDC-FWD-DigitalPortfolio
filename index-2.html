@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Digital portfolio.html</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<style>
+  
+  /* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+header {
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+  /* Hero Section */
+.hero {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 span {
+    color: yellow;
+}
+#00f2fe);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 span {
+    color: yellow;
+}
+
+.btn {
+    background: white;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 5px;
+}
+  /* About Section */
+.about {
+    padding: 40px 20px;
+}
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-content img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin: 20px;
+  border: 5px solid;
+  
+}
+  /* Achievements */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  background:#f9f9f9;
+  padding: 20px;
+  border-radius: 12px solid ;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 250px;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Profile image */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+  /* Skills */
+.skill {
+  margin: 15px auto;
+  max-width: 500px;
+  text-align: left;
+}
+.bar {
+  background: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.bar div {
+  background: #ff4c68;
+  height: 12px;
+  border-radius: 20px;
+}
+/* Collections (slider) */
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+}
+  
+.slider img {
+  width: 300px;
+  border-radius: 12px;
+  scroll-snap-align: center;
+  transition: transform 0.3s;
+}
+.slider img:hover {
+  transform: scale(1.05);
+}
+  /* Projects Section */
+.projects {
+    padding: 40px 20px;
+    background: #f4f4f4;
+    text-align: center;
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}  
+  /* Contact Section */
+.contact {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+button {
+    background: #4facfe;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+  button:hover {
+    background: #00c6ff;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+} 
+</style>  
+<body>
+<!-- Navbar -->
+<header>
+    <nav class="navbar">
+        <div class="logo">MyPortfolio</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+          <li><a href="#Achievements">Achievements</a></li>
+          <li><a href="#collections">collections</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </nav>
+</header>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>🌊RAGAVI-<span>FASHION DESIGNER✨</span></h1>
+        <p><em>Style Is A Way To Say Who You Are Without Having To Speak🚀</em></p>
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+</section>
+<!-- About Section -->
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <img src=" https://i.postimg.cc/JzBMdWcw/IMG-20241031-114643.jpg" alt="Profile Photo">
+        <p>
+          Hello🤞 — ✨I am RAGAVI, “I’m a BCA student with a dream to shine as a fashion designer, blending creativity with passion. My journey is about turning imagination into timeless style🧑‍🦱.”
+        </p>
+      <ul style="list-style-type:circle;">
+        <li><strong>LOCATION🗺️:</strong>Tamilnadu,india</li>
+        <li><strong>EADUCATION🧑‍🎓:</strong>BCA(Bachorer Of Computer Application)</li>
+        <li><strong>CONTACT👉:</strong>Ragavi18@gmail.com</li>
+        <li><strong>PHONENO📞:</strong>8489572319(or)
+          6369784510</li>
+        </ul>
+    </div>
+</section>
+  <!--Achievements-->
+  <section id="Achievements" class="Achievements">
+    <h2>Achievements</h2>
+    <div class="cards">
+      <div class="card">🏆 Best Emerging Designer </div>
+      <div class="card">✨ Featured in Vogue Fashion</div>
+      <div class="card">👗 Launched Clothing Brand </div>
+    </div>
+  </section>
+  <!-- Skills -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <p>Fashion Illustration</p>
+      <div class="bar"><div style="width: 90%"></div></div>
+    </div>
+    <div class="skill">
+      <p>Trend Forecasting</p>
+      <div class="bar"><div style="width: 80%"></div></div>
+    </div>
+    <div class="skills">
+      <p>Pattern Making</p>
+      <div class="bar"><div style="width: 75%"></div></div>
+    </div>
+  </section>
+
+<!-- Collections -->
+  <section id="collections" clas="collections">
+    <h1>My Collections</h1>
+    <div class="slider">
+      <img src="   https://i.postimg.cc/yYfG0PfW/IMG-20250830-WA0002.jpg"alt="Design 1">
+      <img src=" https://i.postimg.cc/jjY4fnrL/Screenshot-20250828-204418-2.jpg"alt="Design 2">
+      <img src="     https://i.postimg.cc/0j7wPcbn/Screenshot-20250830-120212-2.jpg"alt="Design 3">
+      <img src="    https://i.postimg.cc/qMgwHdLM/7d5034be7312878a788b1eb351548fe9.jpg"alt="Design 4">
+      <img src="  https://i.postimg.cc/Y9DJgYpw/Screenshot-20250831-160344.jpg" alt="Design 5">
+      <img src="   https://i.postimg.cc/9FSb51f9/Screenshot-20250831-160335.jpg"alt="Design 6">
+    </div>    
+    </section> 
+  <!--Design process-->
+  <section id="process" class="process">
+    <h2>Design process</h2>
+    <ol class="process-list">
+      <li><strong>inspiration:</strong>moodboard(fabric,colour, culture)</li>
+      <li><strong>Materials:</strong>fabricboard (cotten,silk,demie,etc...,shows texture,colour,fell of thematerials)</li>
+      <li><strong>sketching:</strong>Rangeboard(Quick silhouettes then refina flats)</li>
+      <li><strong>production:</strong>Teck-pack(sampling,finishing, photoshoot)</li>
+      </ol>
+        <div class="process-examples">
+          <div class="process-example">
+            <h4>The moodboard✨</h4>
+            <img src="     https://i.postimg.cc/sxXFL9vC/IMG-20250831-WA0007-2.jpg .text=moodboard"alt="moodboard"height="250"width="250"/img>
+            </div>
+          <div class="process-example">
+            <h4>The fabricboard👗</h4>
+            <img src="    https://i.postimg.cc/fy4RXRC9/IMG-20250831-WA0008-2.jpg  .text=fabricboard"alt="fabricboard"height="250"width="250"/img>
+            </div>
+          <div class="process-example">
+            <h4>The Rangeboard💃</h4>
+            <img src="    https://i.postimg.cc/yd603nfR/IMG-20250831-WA0009-2.jpg    text=Rangeboard"alt="Rangeboard"height="250"width="250"/img>
+            </div>
+          <div class="process-example">
+            <h4>The Teck-Pack🧥</h4>
+            <img src=" https://i.postimg.cc/dtDKvyYt/IMG-20250831-WA0006-2.jpg"
+text="Teck-pack"alt="Teckpack"height="250"width="250"/img>.   </div>
+    </div>
+  </section>              
+<!-- Projects Section -->
+<section id="projects" class="projects">
+    <h2>My Projects</h2>
+    <div class="project-grid">
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <p>mini collections</p>
+        </div>
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p>Trend Research project (meesho,myntra,instragram)</p>
+      </div>
+      <div class="project-card">
+        <h3>Project 3</h3>
+        <p>Accessory design project, Traditional to modern project</p>
+        </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact Me</h2>
+  <p>Interested in collaboration, commission or an internship? Message me below</p>
+    <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Your Email" required>
+<textarea id="message" placeholder="Your Message" required></textarea>
+<button type="submit">Send</button>
+</form>
+<p id="form-status"></p>
+</section>
+  <!--conclusion-->
+  <section id="conclusion" class="conclusion">
+    <div class="conclusion">
+      <h1>conclusion</h1>
+      <p>✨ “Thank you for visiting my portfolio! Fashion is my passion, and I hope my designs bring you joy and inspiration. Always stay stylish and happy!”</p>
+      </div>
+    </section>
+<footer>
+    <p>&copy; 2025 Your Name | All rights reserved</p>
+</footer>
+  <script>  
+  // Toggle mobile menu
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+});
+// Simple contact form validation
+const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
+
+contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (name && email && message) {
+        formStatus.textContent = "✅ Message sent successfully!";
+        formStatus.style.color = "green";
+        contactForm.reset();
+    } else {
+        formStatus.textContent = "❌ Please fill in all fields.";
+        formStatus.style.color = "red";
+    }
+});
+    </script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
